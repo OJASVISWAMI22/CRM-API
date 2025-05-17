@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "d19b1225-70f5-4974-bb34-16b9e91e0a10",
+		"name": "CRM_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37531672"
+	},
+	"item": [
+		{
+			"name": "create lead",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"aryan \",\r\n  \"email\": \"aryan@email.com\",\r\n  \"company\": \"amazon\",\r\n  \"status\": \"new\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/leads",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"leads"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all leads",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:5000/leads",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"leads"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get lead by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/leads/095d6ec5-2de9-495d-908b-8d71e7b9e938",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"leads",
+						"095d6ec5-2de9-495d-908b-8d71e7b9e938"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update lead",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"John \",\r\n  \"email\": \"ojasvi232@email.com\",\r\n  \"company\": \"Google\",\r\n  \"status\": \"new\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/leads/095d6ec5-2de9-495d-908b-8d71e7b9e938",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"leads",
+						"095d6ec5-2de9-495d-908b-8d71e7b9e938"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete lead by id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/leads/d5f4e94b-949c-41dc-82dc-0314a47b4015",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"leads",
+						"d5f4e94b-949c-41dc-82dc-0314a47b4015"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "score lead by id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"John \",\r\n  \"email\": \"ojasvi232@email.com\",\r\n  \"company\": \"Google\",\r\n  \"status\": \"new\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:5000/leads/06214b14-00d3-4e4d-a59c-0d36cdde0268/score",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"leads",
+						"06214b14-00d3-4e4d-a59c-0d36cdde0268",
+						"score"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

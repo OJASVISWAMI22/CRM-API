@@ -117,7 +117,8 @@ const updateLead = async (req, res) => {
     const result = await db.query(query, values);
     res.json(result.rows[0]);
   } catch (error) {
-    console.error('Error updating lead:', error);
+    console.error('❌ Error creating lead:', error.message || error);
+
     res.status(500).json({ error: 'Server error while updating lead' });
   }
 };

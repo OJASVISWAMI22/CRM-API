@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-app.use('/', leadRoutes);
+app.use('/leads', leadRoutes);
 
 
 app.get('/health', (req, res) => {
