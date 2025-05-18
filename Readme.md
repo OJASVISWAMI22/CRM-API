@@ -1,93 +1,206 @@
-CRM API - Lead Management System
-A simple backend API service for a mock CRM application to manage Leads, with basic CRUD operations and a lead scoring endpoint.
-Features
+# CRM API - Lead Management System
 
-CRUD operations for Leads (Create, Read, Update, Delete)
-Lead scoring endpoint (mock AI implementation)
-RESTful API design
-PostgreSQL database integration
-Error handling and validation
-API documentation
+A robust backend API service for a mock CRM application that manages leads with CRUD operations and features an AI-powered lead scoring system.
 
-Tech Stack
+## Features
 
-Node.js with Express
-PostgreSQL database
-UUID for unique IDs
-Docker support (optional)
+- **Complete Lead Management**: Full CRUD operations for lead data
+- **AI-Powered Lead Scoring**: Intelligent scoring system to prioritize leads
+- **RESTful API Architecture**: Well-designed endpoints following REST principles
+- **Robust Data Validation**: Input validation to ensure data integrity
+- **Comprehensive Error Handling**: User-friendly error responses
+- **PostgreSQL Integration**: Reliable and scalable data storage
+- **API Documentation**: Complete Postman collection for easy testing
 
-Prerequisites
+## Tech Stack
 
-Node.js (v12 or higher)
-PostgreSQL (v10 or higher)
-npm or yarn
+- **Backend**: Node.js with Express
+- **Database**: PostgreSQL
+- **Unique IDs**: UUID for secure identification
+- **Documentation**: Postman Collection
 
-Installation and Setup
-1. Clone the repository
-bashgit clone <repository-url>
-cd crm_api
-2. Install dependencies
-bashnpm install
-3. Database Setup
-Create a PostgreSQL database:
-bashpsql -U postgres
-postgres=# CREATE DATABASE crm_db;
-postgres=# \q
-Run the schema.sql file to create the necessary tables:
-bashpsql -U postgres -d crm_db -f schema.sql
-4. Environment Configuration
-Copy the .env.example file to .env and update the values:
-bashcp .env.example .env
-Update the .env file with your PostgreSQL credentials.
-5. Start the server
-bashnpm run start
-For development with automatic restart:
-bashnpm run dev
-The server will start running at http://localhost:3000.
-API Endpoints
-Leads
+## Getting Started
 
-Create a lead:
+### Prerequisites
 
+- Node.js (v14 or higher)
+- PostgreSQL (v12 or higher)
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/OJASVISWAMI22/CRM-API.git
+   cd CRM-API
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Database Setup**
+   
+   Create a PostgreSQL database:
+   ```bash
+   psql -U postgres
+   postgres=# CREATE DATABASE crm_db;
+   postgres=# \q
+   ```
+   
+   The application will automatically create the necessary tables on startup, or you can run:
+   ```bash
+   npm run migrate
+   ```
+
+4. **Environment Configuration**
+   
+   Copy the example environment file and update with your details:
+   ```bash
+   cp .env.example .env
+   ```
+   
+   Update the `.env` file with your PostgreSQL credentials:
+   ```
+   DB_HOST=localhost
+   DB_PORT=5432
+   DB_USER=postgres
+   DB_PASSWORD=your_password
+   DB_NAME=crm_db
+   PORT=3000
+   ```
+
+5. **Start the server**
+   
+   For production:
+   ```bash
+   npm start
+   ```
+   
+   For development with automatic restart:
+   ```bash
+   npm run dev
+   ```
+   
+   The server will start running at `http://localhost:3000`.
+
+## API Endpoints
+
+### Leads
+
+#### Create a lead
+```
 POST /leads
-Body: { "name": "John Doe", "email": "john@example.com", "company": "Acme Inc", "status": "new" }
+```
+**Request Body:**
+```json
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "company": "Acme Inc",
+  "status": "new"
+}
+```
 
-
-Get all leads:
-
+#### Get all leads
+```
 GET /leads
+```
 
-
-Get lead by ID:
-
+#### Get lead by ID
+```
 GET /leads/:id
+```
 
-
-Update lead:
-
+#### Update lead
+```
 PUT /leads/:id
-Body: { "name": "John Doe", "email": "john@example.com", "company": "Acme Inc", "status": "contacted" }
+```
+**Request Body:**
+```json
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "company": "Acme Inc",
+  "status": "contacted"
+}
+```
 
-
-Delete lead:
-
+#### Delete lead
+```
 DELETE /leads/:id
+```
 
-
-Score lead:
-
+#### Score lead
+```
 POST /leads/:id/score
-Response: { "lead_id": "abc123", "score": 86 }
+```
+**Response:**
+```json
+{
+  "lead_id": "abc123",
+  "score": 86
+}
+```
 
+## Lead Status Values
 
+The lead status can be one of the following values:
+- `new`: Lead has been created but no action taken
+- `contacted`: Lead has been contacted
+- `converted`: Lead has been successfully converted to a customer
 
-API Documentation
-A Postman collection is available for testing and documentation. Import the CRM_API.postman_collection.json file into Postman.
-Running with Docker (Optional)
-Build and run with Docker Compose
-bashdocker-compose up --build
-License
+## API Documentation
+
+A comprehensive Postman collection is available for testing and documentation. Import the `CRM_API.postman_collection.json` file into Postman to get started quickly.
+
+## Project Structure
+
+```
+├── config/             # Configuration files
+├── controllers/        # Request handlers
+├── models/             # Database models
+├── routes/             # API routes
+├── services/           # Business logic
+├── utils/              # Utility functions
+├── middleware/         # Express middleware
+├── .env.example        # Example environment variables
+├── package.json        # Project dependencies
+└── server.js           # Application entry point
+```
+
+## Running Tests
+
+```bash
+# Run all tests
+npm test
+
+# Run tests with coverage
+npm run test:coverage
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
 ISC
-Author
 
-Ojasvi Swami
+## Author
+
+**Ojasvi Swami**
+
+- GitHub: [OJASVISWAMI22](https://github.com/OJASVISWAMI22)
+- LinkedIn: [Ojasvi Swami](https://www.linkedin.com/in/ojasvi-swami/)
+
+---
+
+Made with love by Ojasvi Swami
