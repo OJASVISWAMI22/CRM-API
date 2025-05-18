@@ -68,7 +68,7 @@ A robust backend API service for a mock CRM application that manages leads with 
    DB_USER=postgres
    DB_PASSWORD=your_password
    DB_NAME=crm_db
-   PORT=3000
+   PORT=5000
    ```
 
 5. **Start the server**
@@ -83,7 +83,7 @@ A robust backend API service for a mock CRM application that manages leads with 
    npm run dev
    ```
    
-   The server will start running at `http://localhost:3000`.
+   The server will start running at `http://localhost:5000`.
 
 ## API Endpoints
 
@@ -170,26 +170,6 @@ A comprehensive Postman collection is available for testing and documentation. I
 └── server.js           # Application entry point
 ```
 
-## Running Tests
-
-```bash
-# Run all tests
-npm test
-
-# Run tests with coverage
-npm run test:coverage
-```
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
 ## License
 
 ISC
@@ -199,8 +179,6 @@ ISC
 **Ojasvi Swami**
 
 - GitHub: [OJASVISWAMI22](https://github.com/OJASVISWAMI22)
-- LinkedIn: [Ojasvi Swami](https://www.linkedin.com/in/ojasvi-swami/)
+- LinkedIn: [Ojasvi Swami](https://www.linkedin.com/in/ojasvi-swami-704359253/)
 
----
 
-Made with love by Ojasvi Swami
